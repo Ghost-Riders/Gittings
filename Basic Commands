@@ -63,4 +63,27 @@
     13. The express command 
         1. which will first add modified file into staging and then commits message, the express command can't work for untracked files 	
            In Git Bash: git commit -am
+	    	    -a : stands for adding modified files into git staging area
+		        m: after then commiting with commit message
+    14.	Backing out Chages (undo)
+        1.	backing out can be work on only unstaging. Use following command to unstage a file
+            1.	In Git Bash: git reset HEAD “file name”
+        2.	after unstaging the file use another command to checkout or discard the changes in working directory
+            1.	In Git Bash: git checkout -- “file name”
+        3.	NOTE: if user commits any modification then this steps will not work
+    15.	In Git Bash: git help log
+    16.	Below command is for log details 
+        1.	git log --oneline  will show history of all commit’s  in the single line instead of multiple
+        2.	git log --graph will show asterik (*) based graph denoting branching level hierarchi
+        3.	git log --decorate will show which part of which branches
+        4.	git log --all will show all branch history
+        5.	In Git Bash: git log --oneline --graph --decorate --all
+    17.	Creating git alias is an shorten existance of longer command
+        1.	In Git Bash: git config --global alias.hist “log --oneline --graph --decorate –all”
+    18.	Once this done. To use this command 
+        1.	In Git Bash: git hist    here “hist” is an alias name of the command
+        2.	In Git Bash: git hist -- “File name” : only information related to file
+    19.	View all alias list
+    1.	In Git Bash: git config --global --list
+
 
