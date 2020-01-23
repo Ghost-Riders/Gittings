@@ -84,6 +84,76 @@
         1.	In Git Bash: git hist    here “hist” is an alias name of the command
         2.	In Git Bash: git hist -- “File name” : only information related to file
     19.	View all alias list
-    1.	In Git Bash: git config --global --list
+    	1.	In Git Bash: git config --global --list
+    20.	Rename & deletion of file
+	1.	In Git Bash: git mv “old File” “new FileName”
+	2.	In Git Bash: git rm “filename”
+		After performing above command this works in stage mode then commit with message and changes will reflect on Working Directory.
+    21.	Managing Files outside git
+	1.	In Git Bash: git add -u  add update file to staging mode
+	2.	In Git Bash: git add -A covers all modification possibly and make updates accordingly git index
+    22.	Ignore/Excluding Unwanted Files
+	1.	Check where “.gitignore” file is available or note in current directory, if not then make one. Syntax for this file is one pattern or expression per line.
+	2.	In current directory, user want to exclude the any “.log” file, then in “.gitignore” mention “*.log” then all the extention “.log” will not be shown in git staging area.
+		1.	In Git Bash: git add .gitignore AND commit this with message.
+    23.	Comparing Differences using tool 
+	1.	To add p4merge as visual merge tool,
+		1.	In Git Bash: git config --global diff.tool p4merge
+		2.	In Git Bash: git config --global difftool.p4merge.path 'C:\Program Files\Perforce\p4merge.exe'
+	2.	To setup  p4merge as visual diff tool
+		1.	In Git Bash: git config --global merge.tool p4merge
+		2.	In Git Bash: git config --global mergetool.p4merge.path 'C:\Program Files\Perforce\p4merge.exe'
+    24.	Comparing Differences
+	1.	HEAD: points to the last commit of current branch [ HEAD called as pointer]
+	2.	To check all commits from stating to the end in the current branch. 
+		1.	In Git Bash: git diff “commit Id” HEAD
+	3.	Same by using p4merge tool, but this will iterate up to the all the last modified file which are in unstage area.
+		1.	In Git Bash: git difftool “commit Id” HEAD
+    25.	Branch	
+	1.	To check current branch , In Git Bash: git branch
+	2.	Follows command will create new branch “updates” and also switched to newly created branch. If previous branch modifications are pending to commit in master branch then this command also carry the modification to new branch.
+		1.	In Git Bash: git checkout -b “branch Name”
+	3.	In Git Bash: git diff updates master here “updates” is a branch name.
+	4.	In order to change/ switch to the branch	
+		1.	In Git Bash: git checkout master
+	5.	Merging Branches: Fast forward merging done by following command, that first go to the master branch
+		1.	In Git Bash: git merge “branch Name”
+		2.	Now if we check git hist then we will see that HEAD is pointing to the both merge branches
+	6.	TO delete the branch, In Git Bash: git branch –d “branch Name”
+	Note: The history never goes away, it is just the label changed.
+    26.	Branch Merging with conflict problem: for that we create a scenario, where crate another branch and inside that modify a file, the modification should be done in same line with master branch. After that use merge command then it will show the error about conflict. For that use external difftool GUI  to merge by manual and save the file
+    27.	Git Tags- git is an ocean of tags
+	List of Tags In Git Bash: git tag – list
+	Delete Tag In Git Bash: git tag -d “Tag Name”
+	View associated information of tag In Git Bash: git show “tag Name”
+	1.	Light weight
+		1.	In Git Bash: git tag “tag Name”
+	2.	Annotated tags which include extra information associated with tags
+		1.	In Git Bash: git tag -a “tag Name” -m “commit message”
+    28.	Git Stash – save working directory for temporary changes
+	1.	In Git Bash: git stash this will temporary makes changes to use any other changes in different file, or do other operations.
+	2.	Then come back to the previous stash command to make unstaging the working directory In Git Bash: git stash pop
+    29.	Time Travel with reset and reflog
+	1.	--soft – least destructive, basically points as  HEAD
+	2.	--mixed
+	3.	--hard – More destructive than others 
+
+https://github.com for Remote Repository
+    30.	Go to the URL login to github then create a new repository with name you like.
+	Now to link github repository with our local git repository or push an existing repository from the command line / using Git Bash
+	1.	In Git Bash: git remote -v command tells that any remote connection with github
+	2.	Please make sure that HTTPS link you copied from github
+		1.	In Git Bash: git remote add origin “github repository link”
+		2.	add subcommand takes two parameters,first the name of remote reference we want to create -”origin” (name can be any but primarily it should be origin)and second fill URL to the remote repository
+	3.	Once the command runs successfully check wheather you see two links in Git Bash for pushing and fetching.
+		In Git Bash: git remote -v
+	3.	In Order to synchronise our local repository with remote repository use push command 
+		1.	In Git Bash: git push -u origin master --tags
+		2.	-u which going to setup tracking branch relationship between master branch on local repository and master branch in remote repository.
+		3.	origin : Name of the remote repository
+		4.	master : Name of the branch that we are going to push on remote
+		5.	--tags : send all the tags that are available on local repository to the remote repository
+		6.	for future push or another push -u is no longer required
+
 
 
