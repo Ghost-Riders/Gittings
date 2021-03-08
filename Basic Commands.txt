@@ -122,6 +122,10 @@
 		2.	Now if we check git hist then we will see that HEAD is pointing to the both merge branches
 	6.	TO delete the branch, In Git Bash: git branch –d “branch Name”
 		Note: The history never goes away, it is just the label changed.
+	7.	Delete Remote Branch from git bash
+		1. 	In Git Bash: git push -d <remote name> <branch name>
+			Example-  git push -d origin history    
+			here, history is branch name and origin is remote name
 25.	Branch Merging with conflict problem: 
 	for that we create a scenario, where crate another branch and inside that modify a file, the modification should be done in same line with master branch. After that use merge command then it will show the error about conflict. For that use external difftool GUI  to merge by manual and save the file
 26.	Git Tags- git is an ocean of tags. Locally used to mark important events. Also gives release notes. In GitHub we also download the archived of release notes over project.
