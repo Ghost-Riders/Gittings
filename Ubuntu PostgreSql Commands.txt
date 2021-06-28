@@ -3,3 +3,4 @@ $psql -c "alter user postgres with password 'new_password'"; #Change password
 $psql #to access terminal for postgres
 $\conninfo #view DB connectioin information
 $create database database_name # create DataBase
+$pg_restore -d database_name < path_of_sql_file_to_restore; #Restore backup .sql file to database
