@@ -1,0 +1,5 @@
+$curl -v http://localhost:8080/ #this command gives information about ip addres, port and header of the website/URL
+$curl -o output.json http://localhost:8080/ #this command writes the response body of given website/URL
+1: GET - by default curl calls HTTP GET method, also above example shows the GET method call
+2: POST - this usually sends data to an receiving service
+  $curl -d '{"username":"username","password":"password"}' -H 'Content-Type: application/json'  http://localhost:8080/api/auth/signin
