@@ -1,0 +1,5 @@
+$sudo su - postgres #Log In
+$psql -c "alter user postgres with password 'new_password'"; #Change password
+$psql #to access terminal for postgres
+$\conninfo #view DB connectioin information
+$create database database_name # create DataBase
