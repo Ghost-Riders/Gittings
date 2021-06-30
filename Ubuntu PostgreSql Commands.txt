@@ -4,3 +4,26 @@ $psql #to access terminal for postgres
 $\conninfo #view DB connectioin information
 $create database database_name # create DataBase
 $pg_restore -d database_name < path_of_sql_file_to_restore; #Restore backup .sql file to database
+
+
+#ADD CUSTOME LAUNCHER IN UBUNTU
+#Here adding eclipse as launcher
+STEP 1: create file "eclipse.desktop" inside the location "/usr/share/applications/"
+STEP 2: Required the executable path of eclipse
+        i.e.  /opt/eclipse/jee-2021-06/eclipse/eclipse
+        here, the eclipse is downloaded and stored in "/opt/" directorectory for that required sudo permission
+STEP 3: write the following content
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/opt/eclipse/jee-2021-06/eclipse/eclipse
+Name=Eclipse
+Comment=Eclipse
+Icon=/opt/eclipse/jee-2021-06/eclipse/icon.xpm
+
+STEP 4: Now provide the permission to execute the file for that use following command
+$sudo chmode +x /usr/share/applications/eclipse.desktop
+
+STEP 5: good to go!!!
